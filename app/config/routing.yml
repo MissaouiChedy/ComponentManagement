@@ -1,0 +1,4 @@
+smart_dev_main:
+    resource: "@SmartDevMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
