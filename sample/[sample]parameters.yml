@@ -1,0 +1,20 @@
+#############################################################################
+#A sample configuration file which is not versionned                        #
+# A parameters.yml file should stand in :                                   # 
+# app/config/                                                               #
+# Modify the properties with your own local values.                         #
+#############################################################################
+parameters:
+    database_driver: pdo_mysql #We use pdo_mysql (Do Not Change) 
+    database_host: 127.0.0.1 
+    database_port: null
+    database_name: [Name of the database in MySql] 
+    database_user: [your database user name]
+    database_password: [Your database password]
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: en
+    secret: 39e3728d25adba2c8fbe2445a3001eb3e3ad1d30 #unkown but leave as it is.
+    database_path: #also unkown
