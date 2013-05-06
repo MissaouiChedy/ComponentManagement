@@ -6,5 +6,18 @@
 
 {%block body%}
     <table id="components">
+        <tr>
+           {% for header in model.headers %}
+               <th>header</th>
+           {% endfor %}
+        </tr>
+        {% for row in model.rows %}
+            <tr>
+               {% for column in row %}
+                 <td> column</td>
+               {% endfor %}
+            </tr>
+        {% endfor %}
+        
     </table>
 {%endblock%}
