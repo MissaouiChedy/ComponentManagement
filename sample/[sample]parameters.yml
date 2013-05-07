@@ -8,9 +8,9 @@ parameters:
     database_driver: pdo_mysql #We use pdo_mysql (Do Not Change) 
     database_host: 127.0.0.1 
     database_port: null
-    database_name: [Name of the database in MySql] 
-    database_user: [your database user name]
-    database_password: [Your database password]
+    database_name: [Name of the database in MySql] #Replace By null if none  
+    database_user: [your database user name] #Replace By null if none
+    database_password: [Your database password] #Replace By null if none
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null

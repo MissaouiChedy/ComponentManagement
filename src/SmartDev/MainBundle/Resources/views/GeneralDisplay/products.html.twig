@@ -1,0 +1,21 @@
+{%extends '::base.html.twig'%}
+{% block title%}
+    Produits
+{% endblock %}
+
+{%block body%}
+    <table id="products" style="border: 2px solid black">
+        <tr>
+           {% for header in model.headers %}
+               <th style="border: 2px solid black">{{header}}</th>
+           {% endfor %}
+        </tr>
+        {% for row in model.rows %}
+            <tr>
+               {% for column in row %}
+                 <td style="border: 2px solid black"> {{ column }}</td>
+               {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{%endblock%}
