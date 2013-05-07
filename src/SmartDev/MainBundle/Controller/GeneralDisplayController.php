@@ -10,7 +10,7 @@ class GeneralDisplayController extends Controller {
 		$comp2 = new ComponentDTO("Junit", "Testing framework", "GNU GPL",
 				"Testing framework", "jar file", "stable", false);
 
-		$allComponents = array($comp1, $comp1, $comp1, $comp2);
+		$allComponents = array($comp2, $comp1, $comp1, $comp2);
 
 		$tableModel = new ComponentTableModel($allComponents);
 		return $this
@@ -18,6 +18,7 @@ class GeneralDisplayController extends Controller {
 						"SmartDevMainBundle:GeneralDisplay:components.html.twig",
 						array("model" => $tableModel));
 	}
+	
 	public function displayProductsAction() {
 		$allProducts = array();
 		$tableModel = new ProductTableModel($allProducts);
