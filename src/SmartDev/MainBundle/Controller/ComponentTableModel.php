@@ -16,6 +16,8 @@ class ComponentTableModel {
 		return $this->headers;
 	}
 	public function getRows() {
+            
+            // update
 		$rows = array();
 		for ($i = 0 ; $i< count($this->components);$i++) {
 			if ($this->components[$i]->isVisible()) {
