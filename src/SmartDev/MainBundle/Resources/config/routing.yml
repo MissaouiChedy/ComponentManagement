@@ -2,6 +2,10 @@ smart_dev_main_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: SmartDevMainBundle:Default:index }
 
-smart_dev_main_componentdisplaypage:
-    pattern: /component/display
-    defaults: { _controller: SmartDevMainBundle:ComponentDisplay:display }
+smart_dev_main_componentsDisplayPage:
+    pattern: /display/components
+    defaults: { _controller: SmartDevMainBundle:GeneralDisplay:displayComponents }
+
+smart_dev_main_productsDisplayPage:
+    pattern : /display/products
+    defaults : { _controller: SmartDevMainBundle:GeneralDisplay:displayProducts }

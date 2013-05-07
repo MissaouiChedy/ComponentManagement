@@ -6,27 +6,38 @@ use SmartDev\MainBundle\BuisnessLayer\ComponentDTO;
 class ComponentTableModelTest extends \PHPUnit_Framework_TestCase {
 	public function test_getHeaders_MustReturnHeaderArray() {
 		$model = new ComponentTableModel(null);
-		$headers = $model->getHeaders();
-		$this->assertEquals($headers[0], "Titre");
-		$this->assertEquals($headers[1], "Description");
-		$this->assertEquals($headers[2], "Licence");
-		$this->assertEquals($headers[3], "Type");
-		$this->assertEquals($headers[4], "Nature");
-		$this->assertEquals($headers[5], "Etat");
+
+		$expected = array("Titre", "Description", "Licence", "Nature", "Type",
+				"Etat");
+		$this->assertEquals($model->getHeaders(), $expected);
 	}
-	public function test_getRows_MustContainAllRowsAndColumns() {
-		$comp1 = new ComponentDTO("EJB", "Enterprise JAVA BEAN",
+	public function test_getRows_MustReturnVisibleComponents() {
+		$ejb = new ComponentDTO("EJB", "Enterprise JAVA BEAN",
 				"Proprieaitaire", "Entity Rep", "jar file", "stable", true);
-		$comp2 = new ComponentDTO("Junit", "Testing framework", "GNU GPL",
+		$junit = new ComponentDTO("Junit", "Testing framework", "GNU GPL",
 				"Testing framework", "jar file", "stable", false);
-		$allComponents = array($comp1, $comp2);
-	    $model = new ComponentTableModel($allComponents);
-	    $expected = array(array("EJB", "Enterprise JAVA BEAN",
-				"Proprieaitaire", "Entity Rep", "jar file", "stable"));
-	    $rows = $model->getRows();
-	    print_r($rows);
-	    $this->assertEquals($rows, $expected);
-	    
+		$allComponents = array($ejb, $junit);
+
+		$model = new ComponentTableModel($allComponents);
+		$expected = array(
+				array("EJB", "Enterprise JAVA BEAN", "Proprieaitaire",
+						"Entity Rep", "jar file", "stable"));
+
+		$this->assertEquals($model->getRows(), $expected);
+
+	}
+	public function test_getRows_MustNotReturnInVisibleComponents() {
+		$ejb = new ComponentDTO("EJB", "Enterprise JAVA BEAN",
+				"Proprieaitaire", "Entity Rep", "jar file", "stable", false);
+		$junit = new ComponentDTO("Junit", "Testing framework", "GNU GPL",
+				"Testing framework", "jar file", "stable", false);
+		$allComponents = array($ejb, $junit);
+	
+		$model = new ComponentTableModel($allComponents);
+		$expected = array();
+	
+		$this->assertEquals($model->getRows(), $expected);
+	
 	}
 
 }

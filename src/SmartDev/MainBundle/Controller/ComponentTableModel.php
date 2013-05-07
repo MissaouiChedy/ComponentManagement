@@ -9,8 +9,8 @@ class ComponentTableModel {
 	
 	public function __construct($components) {
 		$this->components = $components;
-		$this->headers = array("Titre", "Description", "Licence", "Type",
-				"Nature", "Etat");
+		$this->headers = array("Titre", "Description", "Licence", "Nature",
+				"Type", "Etat");
 	}
 	public function getHeaders(){
 		return $this->headers;
