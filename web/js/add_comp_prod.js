@@ -18,8 +18,9 @@ function affich_Composant_Form() {
 $(function() {
   
    
-        	//clearQueue();
-			/*$('#custom_file_upload').uploadifyUpload();*/
+        	
+                
+                
         // scroll to top
         $('html, body').animate({scrollTop:0}, 'fast');
 
@@ -28,14 +29,14 @@ $(function() {
 		
 		 $('div#contact_header_comp_prod').hide();
 		 $('table#tabFormChoice').hide();
-        $('div#contact').fadeIn();
+        $('div#DynamiqueForm').fadeIn();
         $('form#compForm').fadeIn('slow');
         //document.getElementById("status-message").innerHTML='Télécharger les images de votre annonce :'; 
 		//$('#status-message').val('Télécharger les images de votre annonce :');
         //show the mask and contact divs
         $('#mask').show().fadeTo('', 0.7);
 		$('#close').fadeIn();
-		$('div#ContactContainerBorder').fadeIn();
+		$('div#DynamiqueFormContainerBorder').fadeIn();
         
         
         // stop the modal link from doing its default action
