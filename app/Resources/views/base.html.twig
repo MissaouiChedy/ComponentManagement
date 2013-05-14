@@ -5,9 +5,94 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+                     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all"  />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        
+        
+        <div class="header">
+        
+        <h1 class="logo"><a href="index.php">><img src="{{ asset('images/logo.png') }}" >Contact</a></h1>
+        
+        
+        
+        <ul class="menu rfloat" id="menu">
+			
+			               <li><a href="{{ path("smart_dev_main_productsDisplayPage") }}" class="menulink"><b>Produits</b></a>
+					  
+					         
+					   </li>
+					   
+					    <li><a href="{{ path("smart_dev_main_componentsDisplayPage") }}" class="menulink"><b>Composants</b></a>
+					  
+					         
+					   </li>
+                    
+                        <li><a href="#" class="menulink                                         "><b>mon compte</b></a>
+                                <ul >
+                                        <li class="first_top"><a href="#">Mon Profil</a></li>
+                                        <li><a href="#">Mes Composants</a></li>
+                                        <li><a href="#">Boite de réception</a></li>
+                                        <li class="last_bottom"><a href="#">Déconnexion</a></li>
+                                </ul>
+                       </li>         
+					   
+					   
+                   
+                <!-- end mini navigation -->
+                </ul>
+        
+        
+    </div>
+        
+        
+    
+    
+    
+    
+    <div id="container">
+            <div id="content">
+            
+              
+                
+       <div class="sidebar_box">
+		 	 <h4>Menu Utilisateur</h4>
+                                                <ul class="menu_sidebar">
+                                                        <li><a href="#" >Mon profil</a></li>
+														<li><a href="index.php?page=mes_comp_prod" >Mes Composants &amp; Produits</a></li>
+                                                        <li><a href="#" >Ajouter Composants ou Produit</a></li>
+                                                        
+                                            <br> 		
+
+                                    <h4>Composants par type</h4>
+                                                <ul class="menu_sidebar">  <li><a href="#" >open source</a></li><li><a href="#" >acheté</a></li><li><a href="#" >développé en interne</a></li>                 </ul>              <!-- end sidebar box -->
+                                        </ul>
+       </div>         
+                
+          <div class="action_boutton mls uiButton rfloat">
+	    <a class="add_annonce modal" href="#" onclick="return false"><img src="{{ asset('images/add_file.png') }}" >Publier un composant/Produit</a>
+            </div>  
+                 
+       <div class="center_content">   
+        
+        
+        
+        
+        
+        
+        
+        
+       
+        {% block body %} 
+            
+        
+        {% endblock %}
         {% block javascripts %}{% endblock %}
+       
+           
+           
+            </div>      
+                </div>
+            </div> 
     </body>
 </html>

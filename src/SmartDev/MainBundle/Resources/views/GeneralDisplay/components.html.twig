@@ -5,18 +5,28 @@
 {% endblock %}
 
 {%block body%}
-    <table id="components" style="border: 2px solid black">
+    
+          
+                
+              
+                
+    <table id="components"  class="menu_composant">
         <tr>
            {% for header in model.headers %}
-               <th style="border: 2px solid black">{{header}}</th>
+               <th >{{header}}</th>
            {% endfor %}
         </tr>
         {% for row in model.rows %}
             <tr>
                {% for column in row %}
-                 <td style="border: 2px solid black"> {{ column }}</td>
+                 <td ><span> {{ column }}</span></td>
                {% endfor %}
             </tr>
         {% endfor %}
+            
+            
+            
     </table>
+                
+         
 {%endblock%}
