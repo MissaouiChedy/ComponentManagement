@@ -194,22 +194,26 @@ white-space: nowrap;
 
 
 .add_annonce {
-background: #EEE url(images/all_bg_bottons.png) repeat 0 0;
-border: 1px solid #999;
-border-bottom-color: #888;
-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
--webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
-cursor: pointer;
-display: -moz-inline-box;
-display: inline-block;
-font-size: 11px;
-font-weight: bold;
-line-height: normal !important;
-padding: 2px 6px;
-text-align: center;
-text-decoration: none;
-vertical-align: top;
-white-space: nowrap;
+    background: url("../images/all_bg_bottons.png") repeat scroll 0px 0px rgb(238, 238, 238);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(153, 153, 153) rgb(153, 153, 153) rgb(136, 136, 136);
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: normal !important;
+    padding: 2px 6px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
 }
 
 
