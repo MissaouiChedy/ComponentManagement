@@ -1,0 +1,34 @@
+SmartDev\MainBundle\Entity\Composant:
+    type: entity
+    table: null
+    repositoryClass: SmartDev\MainBundle\Entity\ComposantRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        titreComposant:
+            type: string
+            length: 255
+            column: TitreComposant
+        descriptionComposant:
+            type: string
+            length: 255
+            column: DescriptionComposant
+        visibiliteComposant:
+            type: boolean
+            column: VisibiliteComposant
+        idLicenceComposant:
+            type: integer
+            column: IdLicenceComposant
+        idTypeComposant:
+            type: integer
+            column: IdTypeComposant
+        idNatureComposant:
+            type: integer
+            column: IdNatureComposant
+        idEtatComposant:
+            type: integer
+            column: IdEtatComposant
+    lifecycleCallbacks: {  }

@@ -1,0 +1,15 @@
+SmartDev\MainBundle\Entity\NtureProduit:
+    type: entity
+    table: null
+    repositoryClass: SmartDev\MainBundle\Entity\NtureProduitRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nomNatureProduit:
+            type: string
+            length: 255
+            column: NomNatureProduit
+    lifecycleCallbacks: {  }

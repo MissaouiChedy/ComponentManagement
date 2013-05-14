@@ -9,3 +9,6 @@ smart_dev_main_componentsDisplayPage:
 smart_dev_main_productsDisplayPage:
     pattern : /display/products
     defaults : { _controller: SmartDevMainBundle:GeneralDisplay:displayProducts }
+smart_dev_main_ajouter_composant:
+    pattern:  /ajoutercomposant
+    defaults: { _controller: SmartDevMainBundle:Default:ajouter_composant  }

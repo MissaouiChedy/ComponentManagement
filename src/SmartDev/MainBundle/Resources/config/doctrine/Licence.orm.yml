@@ -1,0 +1,15 @@
+SmartDev\MainBundle\Entity\Licence:
+    type: entity
+    table: null
+    repositoryClass: SmartDev\MainBundle\Entity\LicenceRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nomLicence:
+            type: string
+            length: 255
+            column: NomLicence
+    lifecycleCallbacks: {  }

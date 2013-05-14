@@ -1,0 +1,15 @@
+SmartDev\MainBundle\Entity\ProgrammeProduit:
+    type: entity
+    table: null
+    repositoryClass: SmartDev\MainBundle\Entity\ProgrammeProduitRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nomProgrammeProduit:
+            type: string
+            length: 255
+            column: NomProgrammeProduit
+    lifecycleCallbacks: {  }
