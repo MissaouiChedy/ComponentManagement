@@ -362,7 +362,8 @@ position: relative;
 }
 
 #mask {
-background: -webkit-radial-gradient(rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0.5) 35%, rgba(0, 0, 0, 0.7));
+/*background: -webkit-radial-gradient(rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0.5) 35%, rgba(0, 0, 0, 0.7)); */ /*for Chrome*/
+background-color: rgba(0, 0, 0, 0.4); /*For firefoxe and chrome */
 display: none;
 height: 100%;
 left: 0;
