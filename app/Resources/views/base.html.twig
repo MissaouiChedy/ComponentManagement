@@ -6,10 +6,51 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
                      <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all"  />
+         
+                             <script type="text/javascript" src="{{ asset('js/jquery-1.8.3.min.js') }}"></script>
+
+                     <script type="text/javascript" src="{{ asset('js/add_comp_prod.js') }}"></script>	
+	<script type="text/javascript" src="{{ asset('js/del_comp_prod.js') }}"></script>	
     </head>
     <body>
+        <div id="DynamiqueFormContainerBorder">
+            <div id="DynamiqueForm">
+                     	<div id="close" class="rfloat" ><span class="delete_annonce"><a class="DeleteButton" href="#"  title="Fermer" onclick="return false" ></a></span></div>
+                         <p class="response-msg success">success</p>
+                <span>Chargement...</span>
+                
+                
+                
+                <div class="mas" id="div_tabFormChoice">
+	
+	
+	<table id="tabFormChoice" class="uiGrid fbTabGrid composerPhotoGrid uiGridFixed" cellspacing="0" cellpadding="0">
+	<div id="contact_header_comp_prod" class="contact_header">Cree un Composant / Produit</div>
+	<tbody>
+	<tr>
+	<td class="prs borderItem">
+	<a class="pvm fbTabGridItem" href="{{ path("smart_dev_main_ajouter_composant") }}" rel="async" >
+	<div class="title fsl fwb fcb composant">Composant</div>
+	</a></td><td class="pls">
+	<div class="flashUploaderOverlayButton stat_elem" id="u_3_2">
+	<a class="pvm fbTabGridItem fluploader_select" href="#" id="u_3_1" rel="async-post" >
+	<div class="title fsl fwb fcb">Produit</div>
+	</a>
+	
+	</div>
+	</td>
+	</tr>
+	</tbody>
+	</table>
+	</div>
+                
+                
+                
+            </div>
+        </div>
         
-        
+            <div id="mask"></div>
+            
         <div class="header">
         
         <h1 class="logo"><a href="index.php">><img src="{{ asset('images/logo.png') }}" >Contact</a></h1>
@@ -69,7 +110,7 @@
                                         </ul>
        </div>         
                 
-          <div class="action_boutton mls uiButton rfloat">
+          <div class="action_boutton mls uiButton">
 	    <a class="add_annonce modal" href="#" onclick="return false"><img src="{{ asset('images/add_file.png') }}" >Publier un composant/Produit</a>
             </div>  
                  

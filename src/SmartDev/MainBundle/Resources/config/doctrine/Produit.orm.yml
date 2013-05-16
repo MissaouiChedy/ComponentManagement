@@ -1,0 +1,40 @@
+SmartDev\MainBundle\Entity\Produit:
+    type: entity
+    table: null
+    repositoryClass: SmartDev\MainBundle\Entity\ProduitRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        titreProduit:
+            type: string
+            length: 255
+            column: TitreProduit
+        descriptionProduit:
+            type: string
+            length: 255
+            column: DescriptionProduit
+        visibiliteProduit:
+            type: boolean
+            column: VisibiliteProduit
+        idVersionProduit:
+            type: integer
+            column: IdVersionProduit
+        idTypeProduit:
+            type: integer
+            column: IdTypeProduit
+        idNatureProduit:
+            type: integer
+            column: IdNatureProduit
+        idLicenceProduit:
+            type: integer
+            column: IdLicenceProduit
+        idProgrammeProduit:
+            type: integer
+            column: IdProgrammeProduit
+        idEtatProduit:
+            type: integer
+            column: IdEtatProduit
+    lifecycleCallbacks: {  }

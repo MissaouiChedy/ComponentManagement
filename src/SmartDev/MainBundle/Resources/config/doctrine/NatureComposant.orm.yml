@@ -1,0 +1,15 @@
+SmartDev\MainBundle\Entity\NatureComposant:
+    type: entity
+    table: null
+    repositoryClass: SmartDev\MainBundle\Entity\NatureComposantRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nomNaure:
+            type: string
+            length: 255
+            column: NomNaure
+    lifecycleCallbacks: {  }

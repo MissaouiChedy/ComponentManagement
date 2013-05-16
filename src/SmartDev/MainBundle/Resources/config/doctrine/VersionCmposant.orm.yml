@@ -1,0 +1,18 @@
+SmartDev\MainBundle\Entity\VersionCmposant:
+    type: entity
+    table: null
+    repositoryClass: SmartDev\MainBundle\Entity\VersionCmposantRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nomVersion:
+            type: string
+            length: 255
+            column: NomVersion
+        dateVersion:
+            type: datetime
+            column: DateVersion
+    lifecycleCallbacks: {  }

@@ -1,0 +1,15 @@
+SmartDev\MainBundle\Entity\Etat:
+    type: entity
+    table: null
+    repositoryClass: SmartDev\MainBundle\Entity\EtatRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nomEtat:
+            type: string
+            length: 255
+            column: NomEtat
+    lifecycleCallbacks: {  }

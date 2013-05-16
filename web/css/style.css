@@ -194,22 +194,26 @@ white-space: nowrap;
 
 
 .add_annonce {
-background: #EEE url(images/all_bg_bottons.png) repeat 0 0;
-border: 1px solid #999;
-border-bottom-color: #888;
-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
--webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
-cursor: pointer;
-display: -moz-inline-box;
-display: inline-block;
-font-size: 11px;
-font-weight: bold;
-line-height: normal !important;
-padding: 2px 6px;
-text-align: center;
-text-decoration: none;
-vertical-align: top;
-white-space: nowrap;
+    background: url("../images/all_bg_bottons.png") repeat scroll 0px 0px rgb(238, 238, 238);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(153, 153, 153) rgb(153, 153, 153) rgb(136, 136, 136);
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: normal !important;
+    padding: 2px 6px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
 }
 
 
@@ -318,4 +322,142 @@ position: relative;
 left: 0;
 border: none;
 padding: 0;
+}
+
+
+/* Dynamique Form*/
+
+#DynamiqueFormContainerBorder {
+display: none;
+padding: 10px;
+margin-top: 0px;
+margin-bottom: 0px;
+height: auto;
+width: 570px;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;
+background: rgba(82, 82, 82, 0.7);
+padding: 10px;
+font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+font-size: 11px;
+color: #333;
+text-align: left;
+direction: ltr;
+z-index: 9999;
+left: 50%;
+margin-left: -300px;
+position: absolute;
+top: 50px;
+}
+
+#DynamiqueForm {
+position: absolute;
+background-color: #ffffff;
+display: none;
+border: 1px solid #555;
+padding: 20px;
+z-index: 9999;
+position: relative;
+}
+
+#mask {
+background: -webkit-radial-gradient(rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0.5) 35%, rgba(0, 0, 0, 0.7));
+display: none;
+height: 100%;
+left: 0;
+position: absolute;
+top: 0;
+width: 100%;
+z-index: 100;
+}
+
+.contact_header {
+background: url(../images/envelope.png) no-repeat left;
+font-family: arial, sans-serif;
+font-size: 30px;
+font-weight: 700;
+padding: 5px 5px 10px 5px;
+}
+.uiGrid {
+border: 0;
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+.uiGridFixed {
+table-layout: fixed;
+width: 100%;
+}
+.prs {
+padding-right: 5px;
+}
+table#tabFormChoice a {
+border: 1px solid #e5e5e5;
+}
+table#tabFormChoice a:hover{background: #ebeef4;text-decoration:underline}
+
+
+.composerPhotoGrid .fbTabGridItem {
+display: table;
+height: 79px;
+width: 100%;
+}
+
+/*delete button*/
+
+span.delete_annonce a:hover {
+background-image: url(../images/all_delete_botton.png);
+background-repeat: none;
+background-position: 0px 30px;
+height: 15px;
+width: 15px;
+cursor: pointer;
+display: -moz-inline-box;
+display: inline-block;
+margin: 0;
+padding: 0;
+zoom: 1;
+border: 1px solid white;
+vertical-align: top;
+}
+.DeleteButton {
+background-image: url(../images/all_delete_botton.png);
+background-repeat: none;
+background-position: 0px 0px;
+height: 15px;
+width: 15px;
+cursor: pointer;
+display: -moz-inline-box;
+display: inline-block;
+margin: 0;
+padding: 0;
+zoom: 1;
+border: 1px solid white;
+vertical-align: top;
+}
+
+.pvm {
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.composerPhotoGrid .fbTabGridItem .title {
+display: table-cell;
+vertical-align: middle;
+}
+
+.fbTabGridItem .title {
+color: #3b5998;
+}
+
+.fsl {
+font-size: 13px;
+}
+
+.fwb {
+font-weight: bold;
+}
+.fbTabGridItem {
+text-align: center;
+zoom: 1;
 }
