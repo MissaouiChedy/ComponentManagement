@@ -2,7 +2,11 @@
 /* Nom de SGBD :  MySQL 5.0                                     */
 /* Date de création :  07/05/2013 17:08:40                      */
 /*==============================================================*/
+DROP DATABASE IF EXISTS DBCOMP;
 
+CREATE DATABASE IF NOT EXISTS DBCOMP;
+
+USE DBCOMP;
 
 drop table if exists Association_12;
 
