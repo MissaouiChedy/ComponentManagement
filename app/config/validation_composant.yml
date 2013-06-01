@@ -1,0 +1,9 @@
+# src/Acme/BlogBundle/Resources/config/validation.yml
+SmartDev\MainBundle\Entity\Composant:
+    properties:
+        descriptionComposant:
+            - NotBlank: ~
+            
+         
+            
+            

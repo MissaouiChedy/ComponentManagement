@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+{% block title %}
+    Ajouter un Produit !
+{% endblock %}
+{% block body %}
+   
+    
+    
+    
+<h1> Ajouter une Nature de produit</h1>
+<form action="{{ path('smart_dev_main_ajouter_produit') }}" method="post">
+{{ form_widget (form) }}
+        
+<input type="submit">
+</form>
+ 
+    
+    
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+{% block title %}
+    Ajouter une Licence !
+{% endblock %}
+{% block body %}
+   
+    
+    
+    
+<h1> Ajouter une Licence</h1>
+<form action="{{ path('smart_dev_main_ajouter_composant') }}" method="post">
+{{ form_widget (form) }}
+<input type="submit">
+</form>
+ 
+    
+    
+{% endblock %}

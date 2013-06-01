@@ -5,10 +5,36 @@ smart_dev_main_homepage:
 smart_dev_main_componentsDisplayPage:
     pattern: /display/components
     defaults: { _controller: SmartDevMainBundle:GeneralDisplay:displayComponents }
-
 smart_dev_main_productsDisplayPage:
     pattern : /display/products
     defaults : { _controller: SmartDevMainBundle:GeneralDisplay:displayProducts }
 smart_dev_main_ajouter_composant:
     pattern:  /ajoutercomposant
     defaults: { _controller: SmartDevMainBundle:Default:ajouter_composant  }
+smart_dev_main_ajouter_produit:
+    pattern:  /ajouterproduit
+    defaults: { _controller: SmartDevMainBundle:Default:ajouter_produit  }
+smart_dev_main_ajouter_licence:
+    pattern:  /ajouterlicence
+    defaults: { _controller: SmartDevMainBundle:Default:ajouter_licence  }
+smart_dev_main_ajouter_nature_composant:
+    pattern:  /ajouternaturecomposant
+    defaults: { _controller: SmartDevMainBundle:Default:ajouter_nature_composant }
+smart_dev_main_ajouter_nature_produit:
+    pattern:  /ajouternatureproduit
+    defaults: { _controller: SmartDevMainBundle:Default:ajouter_nature_produit }
+smart_dev_main_ajouter_version_produit:
+    pattern:  /ajouterversionproduit
+    defaults: { _controller: SmartDevMainBundle:Default:ajouter_version_produit }
+smart_dev_main_ajouter_version_composant:
+    pattern:  /ajouterversioncomposant
+    defaults: { _controller: SmartDevMainBundle:Default:ajouter_version_composant }
+smart_dev_main_ajouter_programme_produit:
+    pattern:  /ajouterprogrammeproduit
+    defaults: { _controller: SmartDevMainBundle:Default:ajouter_programme_produit }
+smart_dev_main_ajouter_type_composant:
+    pattern:  /ajoutertypecomposant
+    defaults: { _controller: SmartDevMainBundle:Default:ajouter_type_composant }
+smart_dev_main_ajouter_type_produit:
+    pattern:  /ajoutertypeproduit
+    defaults: { _controller: SmartDevMainBundle:Default:ajouter_type_produit }

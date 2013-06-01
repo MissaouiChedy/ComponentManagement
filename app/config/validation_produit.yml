@@ -1,0 +1,12 @@
+# src/Acme/BlogBundle/Resources/config/validation.yml
+
+            
+SmartDev\MainBundle\Entity\Produit:
+    properties:
+        titreProduit:
+            - NotBlank: ~    
+        descriptionProduit:
+            - NotBlank: ~    
+            
+            
+            

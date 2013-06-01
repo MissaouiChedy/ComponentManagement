@@ -34,7 +34,7 @@ class NatureProduit
      * Set nomNatureProduit
      *
      * @param string $nomNatureProduit
-     * @return NtureProduit
+     * @return NatureProduit
      */
     public function setNomNatureProduit($nomNatureProduit)
     {
