@@ -238,4 +238,17 @@ class Composant
     {
         return $this->idEtatComposant;
     }
+
+    /**
+     * Set titreComposant
+     *
+     * @param string $titreComposant
+     * @return Composant
+     */
+    public function setTitreComposant($titreComposant)
+    {
+        $this->titreComposant = $titreComposant;
+    
+        return $this;
+    }
 }
