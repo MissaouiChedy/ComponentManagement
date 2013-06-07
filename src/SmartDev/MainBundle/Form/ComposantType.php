@@ -47,7 +47,7 @@ class ComposantType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'SmartDev\MainBundle\Entity\Composant'
-        ));
+            ));
     }
 
     public function getName()

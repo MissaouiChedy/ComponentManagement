@@ -6,26 +6,24 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class VersionCmposantType extends AbstractType
+class EtatType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        
         $builder
-            ->add('nomVersion','text',array('label'=>'Nom de la version','required' => true))
-            ->add('dateVersion','datetime',array('label'=>'Date de la Version','required' => true))
+            ->add('nomEtat','text',array('label'=>'Nom de l\'état','required' => true))
         ;
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'SmartDev\MainBundle\Entity\VersionCmposant'
+            'data_class' => 'SmartDev\MainBundle\Entity\Etat'
         ));
     }
 
     public function getName()
     {
-        return 'smartdev_mainbundle_versioncmposanttype';
+        return 'smartdev_mainbundle_etattype';
     }
 }
