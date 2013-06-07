@@ -62,6 +62,7 @@ class VersionCmposant
      * Set dateVersion
      *
      * @param \DateTime $dateVersion
+     * 
      * @return VersionCmposant
      */
     public function setDateVersion($dateVersion)

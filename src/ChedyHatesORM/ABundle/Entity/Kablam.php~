@@ -1,0 +1,42 @@
+<?php
+
+namespace ChedyHatesORM\ABundle\Entity;
+
+use Doctrine\ORM\Mapping\ManyToMany;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Kablam
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="ChedyHatesORM\ABundle\Entity\KablamRepository")
+ */
+class Kablam
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    /**
+     * @ORM\OneToOne(targetEntity="Chiromi", mappedBy="kablam")
+     */
+    private $chiromi;
+    /**
+     * @ORM\OneToMany(targetEntity="Festus", mappedBy="kablam")
+     */
+    private $festus;
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

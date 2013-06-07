@@ -8,8 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Composant
  */
 class Composant
-{
-    /**
+{    /**
      * @var integer
      */
     private $id;
@@ -30,30 +29,23 @@ class Composant
     private $visibiliteComposant;
 
     /**
-     * @var integer
+     * @var \SmartDev\MainBundle\Entity\NatureComposant
      */
-    private $idLicenceComposant;
+    private $natureComposant;
 
     /**
-     * @var integer
+     * @var \Doctrine\Common\Collections\Collection
      */
-    private $idTypeComposant;
-    /**
-     * @var integer
-     */
-    private $idVersionComposant;
+    private $versionComposant;
 
     /**
-     * @var integer
+     * Constructor
      */
-    private $idNatureComposant;
-
-    /**
-     * @var integer
-     */
-    private $idEtatComposant;
-
-
+    public function __construct()
+    {
+        $this->versionComposant = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
     /**
      * Get id
      *
@@ -64,30 +56,20 @@ class Composant
         return $this->id;
     }
 
-     /**
-     * Get idVersionComposant
+    /**
+     * Set titreComposant
      *
-     * @return integer 
-     */
-    public function getidVersionComposant()
-    {
-        return $this->idVersionComposant;
-    }
-    
-     /**
-     * Set idVersionComposant
-     *
-     * @param integer $idVersionComposant
+     * @param string $titreComposant
      * @return Composant
      */
-    public function setidVersionComposant($idVersionComposant)
+    public function setTitreComposant($titreComposant)
     {
-        $this->titreComposant = $idVersionComposant;
+        $this->titreComposant = $titreComposant;
     
         return $this;
     }
-    
-     /**
+
+    /**
      * Get titreComposant
      *
      * @return string 
@@ -96,10 +78,6 @@ class Composant
     {
         return $this->titreComposant;
     }
-    
-    
-    
- 
 
     /**
      * Set descriptionComposant
@@ -148,107 +126,58 @@ class Composant
     }
 
     /**
-     * Set idLicenceComposant
+     * Set natureComposant
      *
-     * @param integer $idLicenceComposant
+     * @param \SmartDev\MainBundle\Entity\NatureComposant $natureComposant
      * @return Composant
      */
-    public function setIdLicenceComposant($idLicenceComposant)
+    public function setNatureComposant(\SmartDev\MainBundle\Entity\NatureComposant $natureComposant = null)
     {
-        $this->idLicenceComposant = $idLicenceComposant;
+        $this->natureComposant = $natureComposant;
     
         return $this;
     }
 
     /**
-     * Get idLicenceComposant
+     * Get natureComposant
      *
-     * @return integer 
+     * @return \SmartDev\MainBundle\Entity\NatureComposant 
      */
-    public function getIdLicenceComposant()
+    public function getNatureComposant()
     {
-        return $this->idLicenceComposant;
+        return $this->natureComposant;
     }
 
     /**
-     * Set idTypeComposant
+     * Add versionComposant
      *
-     * @param integer $idTypeComposant
+     * @param \SmartDev\MainBundle\Entity\VersionCmposant $versionComposant
      * @return Composant
      */
-    public function setIdTypeComposant($idTypeComposant)
+    public function addVersionComposant(\SmartDev\MainBundle\Entity\VersionCmposant $versionComposant)
     {
-        $this->idTypeComposant = $idTypeComposant;
+        $this->versionComposant[] = $versionComposant;
     
         return $this;
     }
 
     /**
-     * Get idTypeComposant
+     * Remove versionComposant
      *
-     * @return integer 
+     * @param \SmartDev\MainBundle\Entity\VersionCmposant $versionComposant
      */
-    public function getIdTypeComposant()
+    public function removeVersionComposant(\SmartDev\MainBundle\Entity\VersionCmposant $versionComposant)
     {
-        return $this->idTypeComposant;
+        $this->versionComposant->removeElement($versionComposant);
     }
 
     /**
-     * Set idNatureComposant
+     * Get versionComposant
      *
-     * @param integer $idNatureComposant
-     * @return Composant
+     * @return \Doctrine\Common\Collections\Collection 
      */
-    public function setIdNatureComposant($idNatureComposant)
+    public function getVersionComposant()
     {
-        $this->idNatureComposant = $idNatureComposant;
-    
-        return $this;
-    }
-
-    /**
-     * Get idNatureComposant
-     *
-     * @return integer 
-     */
-    public function getIdNatureComposant()
-    {
-        return $this->idNatureComposant;
-    }
-
-    /**
-     * Set idEtatComposant
-     *
-     * @param integer $idEtatComposant
-     * @return Composant
-     */
-    public function setIdEtatComposant($idEtatComposant)
-    {
-        $this->idEtatComposant = $idEtatComposant;
-    
-        return $this;
-    }
-
-    /**
-     * Get idEtatComposant
-     *
-     * @return integer 
-     */
-    public function getIdEtatComposant()
-    {
-        return $this->idEtatComposant;
-    }
-
-    /**
-     * Set titreComposant
-     *
-     * @param string $titreComposant
-     * @return Composant
-     */
-    public function setTitreComposant($titreComposant)
-    {
-        $this->titreComposant = $titreComposant;
-    
-        return $this;
+        return $this->versionComposant;
     }
 }

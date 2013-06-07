@@ -2,6 +2,20 @@ SmartDev\MainBundle\Entity\Composant:
     type: entity
     table: null
     repositoryClass: SmartDev\MainBundle\Entity\ComposantRepository
+    oneToOne:
+        licence:
+            targetEntity: Licence
+    oneToOne:
+        typeComposant:
+            targetEntity: TypeComposant
+    oneToOne:
+        natureComposant:
+            targetEntity: NatureComposant
+    
+    oneToMany:
+        versionComposant:
+            targetEntity: VersionCmposant
+            mappedBy: Composant  
     fields:
         id:
             type: integer
@@ -19,16 +33,5 @@ SmartDev\MainBundle\Entity\Composant:
         visibiliteComposant:
             type: boolean
             column: VisibiliteComposant
-        idLicenceComposant:
-            type: integer
-            column: IdLicenceComposant
-        idTypeComposant:
-            type: integer
-            column: IdTypeComposant
-        idNatureComposant:
-            type: integer
-            column: IdNatureComposant
-        idEtatComposant:
-            type: integer
-            column: IdEtatComposant
+            
     lifecycleCallbacks: {  }
