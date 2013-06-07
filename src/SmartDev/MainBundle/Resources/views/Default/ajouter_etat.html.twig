@@ -1,14 +1,14 @@
 {% extends '::base.html.twig' %}
 {% block title %}
-    Ajouter un Composan !
+    Ajouter une Licence !
 {% endblock %}
 {% block body %}
    
     
     
     
-<h1> Ajouter une Version Composant</h1>
-<form action="{{ path('smart_dev_main_ajouter_composant_version') }}" method="post">
+<h1> Ajouter une Etat</h1>
+<form action="{{ path('smart_dev_main_ajouter_etat') }}" method="post">
 {{ form_widget (form) }}
 <input type="submit">
 </form>

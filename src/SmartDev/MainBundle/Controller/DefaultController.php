@@ -7,8 +7,6 @@ use SmartDev\MainBundle\Entity\Composant;
 use SmartDev\MainBundle\Form\ComposantType;
 use SmartDev\MainBundle\Entity\Produit;
 use SmartDev\MainBundle\Form\ProduitType;
-use SmartDev\MainBundle\Entity\licence;
-use SmartDev\MainBundle\Form\LicenceType;
 use SmartDev\MainBundle\Entity\NatureComposant;
 use SmartDev\MainBundle\Form\NatureComposantType;
 use SmartDev\MainBundle\Entity\NtureProduit;
@@ -23,6 +21,10 @@ use SmartDev\MainBundle\Entity\TypeProduit;
 use SmartDev\MainBundle\Form\TypeProduitType;
 use SmartDev\MainBundle\Entity\TypeComposant;
 use SmartDev\MainBundle\Form\TypeComposantType;
+use SmartDev\MainBundle\Entity\Licence;
+use SmartDev\MainBundle\Form\LicenceType;
+use SmartDev\MainBundle\Entity\Etat;
+use SmartDev\MainBundle\Form\EtatType;
 class DefaultController extends Controller
 {
     public function indexAction()
@@ -36,16 +38,14 @@ class DefaultController extends Controller
      public function ajouter_composantAction()
     {
    
-        $comp=$this->getDoctrine()->getEntityManager();
-        //$form=$this->createForm(new ComposantType(), );
         $compo=new Composant();
         $form=$this->createForm(new ComposantType());
         $request=$this->getRequest();
-        
         $form->bindRequest($request);
+        
         if($form->isValid())
             {
-            
+            $comp=$this->getDoctrine()->getEntityManager();
             $compo=$form->getData();
             $comp->persist($compo);
             $comp->flush();
@@ -58,8 +58,8 @@ class DefaultController extends Controller
     {
    
         $prod=$this->getDoctrine()->getEntityManager();
-        //$form=$this->createForm(new ComposantType(), );
-        $produ=new Produit;
+       
+        $produ=new Produit();
         $form=$this->createForm(new ProduitType());
         $request=$this->getRequest();
         
@@ -77,29 +77,46 @@ class DefaultController extends Controller
     
      public function ajouter_licenceAction()
     {
-   
-        $lic=$this->getDoctrine()->getEntityManager();
-        $lice=new Produit;
+        $lice=new Licence;
         $form=$this->createForm(new LicenceType());
-        $request=$this->getRequest();
+        $lic=$this->getDoctrine()->getEntityManager();
         
+        $request=$this->getRequest();
         $form->bindRequest($request);
         if($form->isValid())
             {
-            
-            $produ=$form->getData();
+            $lice=$form->getData();
             $lic->persist($lice);
             $lic->flush();
             }
         
         return $this->render('SmartDevMainBundle:Default:ajouter_licence.html.twig', array('form'=>$form->createView()));
     }
+    
+    
+    
+      public function ajouter_etatAction()
+    {
+        $etat=new Etat;
+        $form=$this->createForm(new EtatType());
+        $eta=$this->getDoctrine()->getEntityManager();
+        
+        $request=$this->getRequest();
+        $form->bindRequest($request);
+        if($form->isValid())
+            {
+            $etat=$form->getData();
+            $eta->persist($etat);
+            $eta->flush();
+            }
+        
+        return $this->render('SmartDevMainBundle:Default:ajouter_etat.html.twig', array('form'=>$form->createView()));
+    }
      public function ajouter_nature_composantAction()
     {
-   
-        $nat=$this->getDoctrine()->getEntityManager();
         $natu=new NatureComposant;
         $form=$this->createForm(new NatureComposantType());
+        $nat=$this->getDoctrine()->getEntityManager();
         $request=$this->getRequest();
         
         $form->bindRequest($request);
@@ -143,17 +160,15 @@ class DefaultController extends Controller
         $form->bindRequest($request);
         if($form->isValid())
             {
-            
             $verspro=$form->getData();
             $verspr->persist($verspro);
-            $$verspr->flush();
+            $verspr->flush();
             }
         
         return $this->render('SmartDevMainBundle:Default:ajouter_produit_version.html.twig', array('form'=>$form->createView()));
     }
-     public function ajouter_version_composantAction()
+     public function ajouter_composant_versionAction()
     {
-   
         $verscomp=$this->getDoctrine()->getEntityManager();
         $verscompo=new VersionCmposant;
         $form=$this->createForm(new VersionCmposantType());
@@ -162,11 +177,10 @@ class DefaultController extends Controller
         $form->bindRequest($request);
         if($form->isValid())
             {
-            $form->getData();
+            $verscompo=$form->getData();
             $verscomp->persist($verscompo);
             $verscomp->flush();
             }
-        
         return $this->render('SmartDevMainBundle:Default:ajouter_composant_version.html.twig', array('form'=>$form->createView()));
     }
     public function ajouter_programme_produitAction()
