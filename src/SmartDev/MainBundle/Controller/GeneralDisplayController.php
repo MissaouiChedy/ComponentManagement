@@ -44,5 +44,10 @@ class GeneralDisplayController extends Controller {
 						"SmartDevMainBundle:GeneralDisplay:products.html.twig",
 						array("model" => $tableModel));
 	}
+	public function displayParametersAction() {
+		return $this
+		->render(
+				"SmartDevMainBundle:GeneralDisplay:parameters.html.twig");
+	}
 }
 ?>

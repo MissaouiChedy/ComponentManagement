@@ -6,32 +6,32 @@ class ProductTableModelTest extends \PHPUnit_Framework_TestCase{
      
 	public function test_getHeaders_ShouldReturnArrayOfHeaders(){
      	$model = new ProductTableModel(array());
-     	$expected = array("Titre", "Date de creation",
-     			"Description", "Nature", "Type", "Licence", "Etat",
-     			"Technologie");
+     	$expected = array("Titre", 
+     			"Description", "Nature", "Type", "Licence", "Etat"
+     			);
      	$this->assertEquals($model->getHeaders(), $expected);
      }
 
      public function test_getRows_ShouldReturnProductRows(){
-     	$eclipse = new ProductDTO("Eclipse", "12/12/2000", "Eclipse Development platform", "MIT", 
-     			"jar", "IDE", "RC", true, "JAVA");
-     	$ant = new ProductDTO("Apache Ant", "01/09/1999", "Ant build tool", "Apache", 
+     	$eclipse = new ProductDTO("Eclipse", "12/12/1990", "Eclipse Development platform", "MIT", 
+     			"jar", "IDE", "RC", true, "Java");
+     	$ant = new ProductDTO("Apache Ant", "12/12/1990", "Ant build tool", "Apache", 
      			"jar", "Build tool", "stable", true, "Java");
      	$model = new ProductTableModel(array($eclipse, $ant));
      	
      	$expected = array(
-     			array("Eclipse", "12/12/2000", "Eclipse Development platform", "MIT", 
-     			"jar", "IDE", "RC", "JAVA"), 
-     			array("Apache Ant", "01/09/1999", "Ant build tool", "Apache", 
-     			"jar", "Build tool", "stable", "Java")
+     			array("Eclipse", "Eclipse Development platform", "MIT", 
+     			"jar", "IDE", "RC"), 
+     			array("Apache Ant", "Ant build tool", "Apache", 
+     			"jar", "Build tool", "stable")
      		);
      	$this->assertEquals($model->getRows(), $expected);
      }
      
      public function test_getRows_ShouldNotReturnInvisibleProducts(){
-     	$eclipse = new ProductDTO("Eclipse", "12/12/2000", "Eclipse Development platform", "MIT",
+     	$eclipse = new ProductDTO("Eclipse", "12/12/1990","Eclipse Development platform", "MIT",
      			"jar", "IDE", "RC", false, "JAVA");
-     	$ant = new ProductDTO("Apache Ant", "01/09/1999", "Ant build tool", "Apache",
+     	$ant = new ProductDTO("Apache Ant", "12/12/1990","Ant build tool", "Apache",
      			"jar", "Build tool", "stable", false, "Java");
      	$model = new ProductTableModel(array($eclipse, $ant));
      

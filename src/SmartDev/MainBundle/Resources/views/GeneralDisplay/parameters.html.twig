@@ -1,0 +1,15 @@
+{%extends '::base.html.twig'%}
+
+{% block title%}
+    Parameteres
+{% endblock %}
+
+{%block body%}
+    <a href="{{ path('smart_dev_main_ajouter_licence') }}">Ajouter Licence</a><br/>
+    <a href="{{ path('smart_dev_main_ajouter_etat') }}">Ajouter Etat</a><br/>
+    <a href="{{ path('smart_dev_main_ajouter_type_produit') }}">Ajouter Type Produit</a><br/>
+    <a href="{{ path('smart_dev_main_ajouter_type_composant') }}">Ajouter Type Composant</a><br/>
+    <a href="{{ path('smart_dev_main_ajouter_nature_produit') }}">Ajouter Nature Produit</a><br/>
+    <a href="{{ path('smart_dev_main_ajouter_nature_composant') }}">Ajouter Nature Composant</a>            
+         
+{%endblock%}
