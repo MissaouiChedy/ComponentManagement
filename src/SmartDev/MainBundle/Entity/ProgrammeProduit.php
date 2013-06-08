@@ -6,18 +6,27 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * ProgrammeProduit
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="SmartDev\MainBundle\Entity\ProgrammeProduitRepository")
  */
 class ProgrammeProduit
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nomProgramme", type="string")
      */
-    private $nomProgrammeProduit;
+    private $nomProgramme;
 
 
     /**
@@ -31,25 +40,25 @@ class ProgrammeProduit
     }
 
     /**
-     * Set nomProgrammeProduit
+     * Set nomProgramme
      *
-     * @param string $nomProgrammeProduit
+     * @param string $nomProgramme
      * @return ProgrammeProduit
      */
-    public function setNomProgrammeProduit($nomProgrammeProduit)
+    public function setNomProgramme($nomProgramme)
     {
-        $this->nomProgrammeProduit = $nomProgrammeProduit;
+        $this->nomProgramme = $nomProgramme;
     
         return $this;
     }
 
     /**
-     * Get nomProgrammeProduit
+     * Get nomProgramme
      *
      * @return string 
      */
-    public function getNomProgrammeProduit()
+    public function getNomProgramme()
     {
-        return $this->nomProgrammeProduit;
+        return $this->nomProgramme;
     }
 }

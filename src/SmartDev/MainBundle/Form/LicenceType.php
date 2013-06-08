@@ -11,7 +11,7 @@ class LicenceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomLicence','text',array('label'=>'Nom de la licence','required' => true))
+            ->add('nomLicence')
         ;
     }
 

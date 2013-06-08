@@ -6,54 +6,72 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Composant
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="SmartDev\MainBundle\Entity\ComposantRepository")
  */
 class Composant
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="titre", type="string")
      */
-    private $titreComposant;
+    private $titre;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="description", type="string")
      */
-    private $descriptionComposant;
+    private $description;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="visibilite", type="boolean")
      */
-    private $visibiliteComposant;
-
+    private $visibilite;
     /**
-     * @var integer
+     * @ORM\OneToOne(targetEntity="Etat")
      */
-    private $idLicenceComposant;
-
+    private $etat;
     /**
-     * @var integer
+     *@ORM\OneToOne(targetEntity="Licence")
      */
-    private $idTypeComposant;
+    private $licence;
     /**
-     * @var integer
+     * 
+     * @ORM\OneToOne(targetEntity="TypeComposant")
      */
-    private $idVersionComposant;
-
+    private $typeComposant;
     /**
-     * @var integer
+     * 
+     * @ORM\OneToOne(targetEntity="NatureComposant")
      */
-    private $idNatureComposant;
-
+    private $natureComposant;
     /**
-     * @var integer
+     * 
+     * @ORM\OneToMany(targetEntity="VersionComposant", mappedBy="Composant")
      */
-    private $idEtatComposant;
-
-
+    private $versionComposant;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->versionComposant = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
     /**
      * Get id
      *
@@ -64,191 +82,197 @@ class Composant
         return $this->id;
     }
 
-     /**
-     * Get idVersionComposant
+    /**
+     * Set titre
      *
-     * @return integer 
-     */
-    public function getidVersionComposant()
-    {
-        return $this->idVersionComposant;
-    }
-    
-     /**
-     * Set idVersionComposant
-     *
-     * @param integer $idVersionComposant
+     * @param string $titre
      * @return Composant
      */
-    public function setidVersionComposant($idVersionComposant)
+    public function setTitre($titre)
     {
-        $this->titreComposant = $idVersionComposant;
+        $this->titre = $titre;
     
         return $this;
     }
-    
-     /**
-     * Get titreComposant
+
+    /**
+     * Get titre
      *
      * @return string 
      */
-    public function getTitreComposant()
+    public function getTitre()
     {
-        return $this->titreComposant;
+        return $this->titre;
     }
-    
-    
-    
- 
 
     /**
-     * Set descriptionComposant
+     * Set description
      *
-     * @param string $descriptionComposant
+     * @param string $description
      * @return Composant
      */
-    public function setDescriptionComposant($descriptionComposant)
+    public function setDescription($description)
     {
-        $this->descriptionComposant = $descriptionComposant;
+        $this->description = $description;
     
         return $this;
     }
 
     /**
-     * Get descriptionComposant
+     * Get description
      *
      * @return string 
      */
-    public function getDescriptionComposant()
+    public function getDescription()
     {
-        return $this->descriptionComposant;
+        return $this->description;
     }
 
     /**
-     * Set visibiliteComposant
+     * Set visibilite
      *
-     * @param boolean $visibiliteComposant
+     * @param boolean $visibilite
      * @return Composant
      */
-    public function setVisibiliteComposant($visibiliteComposant)
+    public function setVisibilite($visibilite)
     {
-        $this->visibiliteComposant = $visibiliteComposant;
+        $this->visibilite = $visibilite;
     
         return $this;
     }
 
     /**
-     * Get visibiliteComposant
+     * Get visibilite
      *
      * @return boolean 
      */
-    public function getVisibiliteComposant()
+    public function getVisibilite()
     {
-        return $this->visibiliteComposant;
+        return $this->visibilite;
     }
 
     /**
-     * Set idLicenceComposant
+     * Set etat
      *
-     * @param integer $idLicenceComposant
+     * @param \SmartDev\MainBundle\Entity\Etat $etat
      * @return Composant
      */
-    public function setIdLicenceComposant($idLicenceComposant)
+    public function setEtat(\SmartDev\MainBundle\Entity\Etat $etat = null)
     {
-        $this->idLicenceComposant = $idLicenceComposant;
+        $this->etat = $etat;
     
         return $this;
     }
 
     /**
-     * Get idLicenceComposant
+     * Get etat
      *
-     * @return integer 
+     * @return \SmartDev\MainBundle\Entity\Etat 
      */
-    public function getIdLicenceComposant()
+    public function getEtat()
     {
-        return $this->idLicenceComposant;
+        return $this->etat;
     }
 
     /**
-     * Set idTypeComposant
+     * Set licence
      *
-     * @param integer $idTypeComposant
+     * @param \SmartDev\MainBundle\Entity\Licence $licence
      * @return Composant
      */
-    public function setIdTypeComposant($idTypeComposant)
+    public function setLicence(\SmartDev\MainBundle\Entity\Licence $licence = null)
     {
-        $this->idTypeComposant = $idTypeComposant;
+        $this->licence = $licence;
     
         return $this;
     }
 
     /**
-     * Get idTypeComposant
+     * Get licence
      *
-     * @return integer 
+     * @return \SmartDev\MainBundle\Entity\Licence 
      */
-    public function getIdTypeComposant()
+    public function getLicence()
     {
-        return $this->idTypeComposant;
+        return $this->licence;
     }
 
     /**
-     * Set idNatureComposant
+     * Set typeComposant
      *
-     * @param integer $idNatureComposant
+     * @param \SmartDev\MainBundle\Entity\TypeComposant $typeComposant
      * @return Composant
      */
-    public function setIdNatureComposant($idNatureComposant)
+    public function setTypeComposant(\SmartDev\MainBundle\Entity\TypeComposant $typeComposant = null)
     {
-        $this->idNatureComposant = $idNatureComposant;
+        $this->typeComposant = $typeComposant;
     
         return $this;
     }
 
     /**
-     * Get idNatureComposant
+     * Get typeComposant
      *
-     * @return integer 
+     * @return \SmartDev\MainBundle\Entity\TypeComposant 
      */
-    public function getIdNatureComposant()
+    public function getTypeComposant()
     {
-        return $this->idNatureComposant;
+        return $this->typeComposant;
     }
 
     /**
-     * Set idEtatComposant
+     * Set natureComposant
      *
-     * @param integer $idEtatComposant
+     * @param \SmartDev\MainBundle\Entity\NatureComposant $natureComposant
      * @return Composant
      */
-    public function setIdEtatComposant($idEtatComposant)
+    public function setNatureComposant(\SmartDev\MainBundle\Entity\NatureComposant $natureComposant = null)
     {
-        $this->idEtatComposant = $idEtatComposant;
+        $this->natureComposant = $natureComposant;
     
         return $this;
     }
 
     /**
-     * Get idEtatComposant
+     * Get natureComposant
      *
-     * @return integer 
+     * @return \SmartDev\MainBundle\Entity\NatureComposant 
      */
-    public function getIdEtatComposant()
+    public function getNatureComposant()
     {
-        return $this->idEtatComposant;
+        return $this->natureComposant;
     }
 
     /**
-     * Set titreComposant
+     * Add versionComposant
      *
-     * @param string $titreComposant
+     * @param \SmartDev\MainBundle\Entity\VersionComposant $versionComposant
      * @return Composant
      */
-    public function setTitreComposant($titreComposant)
+    public function addVersionComposant(\SmartDev\MainBundle\Entity\VersionComposant $versionComposant)
     {
-        $this->titreComposant = $titreComposant;
+        $this->versionComposant[] = $versionComposant;
     
         return $this;
+    }
+
+    /**
+     * Remove versionComposant
+     *
+     * @param \SmartDev\MainBundle\Entity\VersionComposant $versionComposant
+     */
+    public function removeVersionComposant(\SmartDev\MainBundle\Entity\VersionComposant $versionComposant)
+    {
+        $this->versionComposant->removeElement($versionComposant);
+    }
+
+    /**
+     * Get versionComposant
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVersionComposant()
+    {
+        return $this->versionComposant;
     }
 }

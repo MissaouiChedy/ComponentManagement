@@ -11,7 +11,7 @@ class EtatType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomEtat','text',array('label'=>'Nom de l\'état','required' => true))
+            ->add('nomEtat')
         ;
     }
 

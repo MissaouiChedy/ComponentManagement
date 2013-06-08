@@ -11,7 +11,7 @@ class TypeComposantType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomTypeComposant','text',array('label'=>'Nom de type','required' => true))
+            ->add('nomType')
         ;
     }
 

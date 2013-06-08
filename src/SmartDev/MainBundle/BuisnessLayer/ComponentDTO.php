@@ -9,6 +9,7 @@ class ComponentDTO {
 	private $state;
     private $visibility;
     private $version;
+	
 	public function __construct($title, $description, $licence, $nature, $type,
 			$state, $visibility) {
 		$this->title = $title;

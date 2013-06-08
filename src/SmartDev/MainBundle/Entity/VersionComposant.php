@@ -5,22 +5,33 @@ namespace SmartDev\MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * VersionCmposant
+ * VersionComposant
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="SmartDev\MainBundle\Entity\VersionComposantRepository")
  */
-class VersionCmposant
+class VersionComposant
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nomVersion", type="string")
      */
     private $nomVersion;
 
     /**
-     * @var \DateTime
+     * @var DateTime
+     *
+     * @ORM\Column(name="dateVersion")
      */
     private $dateVersion;
 
@@ -39,7 +50,7 @@ class VersionCmposant
      * Set nomVersion
      *
      * @param string $nomVersion
-     * @return VersionCmposant
+     * @return VersionComposant
      */
     public function setNomVersion($nomVersion)
     {
@@ -62,9 +73,9 @@ class VersionCmposant
      * Set dateVersion
      *
      * @param \DateTime $dateVersion
-     * @return VersionCmposant
+     * @return VersionComposant
      */
-    public function setDateVersion($dateVersion)
+    public function setDateVersion(\DateTime $dateVersion)
     {
         $this->dateVersion = $dateVersion;
     

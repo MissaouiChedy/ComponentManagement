@@ -2,16 +2,22 @@
 namespace SmartDev\MainBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use SmartDev\MainBundle\BuisnessLayer\ComponentDTO;
+use SmartDev\MainBundle\BuisnessLayer\ProductDTO;
 class GeneralDisplayController extends Controller {
 	public function displayComponentsAction() {
-		$comp1 = new ComponentDTO("EJB", "Enterprise JAVA BEAN",
-				"Proprieaitaire", "Entity Rep", "jar file", "stable", true);
-
-		$comp2 = new ComponentDTO("Junit", "Testing framework", "GNU GPL",
-				"Testing framework", "jar file", "stable", false);
-
-		$allComponents = array($comp2, $comp1, $comp1, $comp2);
-
+		$allComponentsEntities = $this->getDoctrine()->getEntityManager()->getRepository("SmartDevMainBundle:Composant")->findAll();
+		
+        $allComponents = array();
+        foreach ($allComponentsEntities as $entity){
+            $allComponents[] = new ComponentDTO( $entity->getTitre(),
+            $entity->getDescription(),
+            $entity->getlicence()->getNomLicence(),
+            $entity->getNatureComposant()->getNomNature(),
+            $entity->getTypeComposant()->getNomType(),
+            $entity->getEtat()->getNomEtat(),
+            $entity->getVisibilite());	
+           
+        }
 		$tableModel = new ComponentTableModel($allComponents);
 		return $this
 				->render(
@@ -20,7 +26,19 @@ class GeneralDisplayController extends Controller {
 	}
 	
 	public function displayProductsAction() {
+		$allProductsEntities = $this->getDoctrine()->getEntityManager()->getRepository("SmartDevMainBundle:Produit")->findAll();
 		$allProducts = array();
+		foreach ($allProductsEntities as $entity){
+			$allProducts[] = new ProductDTO($entity->getTitre(),
+ null,
+ $entity->getDescription(),
+ $entity->getNatureProduit()->getNomNature(),
+ $entity->getTypeProduit()->getNomType(),
+ $entity->getLicence()->getNomLicence(),
+ $entity->getEtat()->getNomEtat(),
+ $entity->getVisibilite(),
+ null);
+		}
 		$tableModel = new ProductTableModel($allProducts);
 		return $this
 				->render(

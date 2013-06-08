@@ -6,23 +6,34 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * VersionProduit
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="SmartDev\MainBundle\Entity\VersionProduitRepository")
  */
 class VersionProduit
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nomVersion", type="string")
      */
-    private $nomVersionProduit;
+    private $nomVersion;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="dateVersion")
      */
-    private $dateVersionProduit;
+    private $dateVersion;
 
 
     /**
@@ -36,48 +47,48 @@ class VersionProduit
     }
 
     /**
-     * Set nomVersionProduit
+     * Set nomVersion
      *
-     * @param string $nomVersionProduit
+     * @param string $nomVersion
      * @return VersionProduit
      */
-    public function setNomVersionProduit($nomVersionProduit)
+    public function setNomVersion($nomVersion)
     {
-        $this->nomVersionProduit = $nomVersionProduit;
+        $this->nomVersion = $nomVersion;
     
         return $this;
     }
 
     /**
-     * Get nomVersionProduit
+     * Get nomVersion
      *
      * @return string 
      */
-    public function getNomVersionProduit()
+    public function getNomVersion()
     {
-        return $this->nomVersionProduit;
+        return $this->nomVersion;
     }
 
     /**
-     * Set dateVersionProduit
+     * Set dateVersion
      *
-     * @param \DateTime $dateVersionProduit
+     * @param \DateTime $dateVersion
      * @return VersionProduit
      */
-    public function setDateVersionProduit($dateVersionProduit)
+    public function setDateVersion(\DateTime $dateVersion)
     {
-        $this->dateVersionProduit = $dateVersionProduit;
+        $this->dateVersion = $dateVersion;
     
         return $this;
     }
 
     /**
-     * Get dateVersionProduit
+     * Get dateVersion
      *
      * @return \DateTime 
      */
-    public function getDateVersionProduit()
+    public function getDateVersion()
     {
-        return $this->dateVersionProduit;
+        return $this->dateVersion;
     }
 }

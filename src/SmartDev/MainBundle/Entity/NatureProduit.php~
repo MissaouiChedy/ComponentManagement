@@ -5,12 +5,12 @@ namespace SmartDev\MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * TypeProduit
+ * NatureProduit
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="SmartDev\MainBundle\Entity\TypeProduitRepository")
+ * @ORM\Entity(repositoryClass="SmartDev\MainBundle\Entity\NatureProduitRepository")
  */
-class TypeProduit
+class NatureProduit
 {
     /**
      * @var integer
@@ -24,9 +24,9 @@ class TypeProduit
     /**
      * @var string
      *
-     * @ORM\Column(name="nomType", type="string")
+     * @ORM\Column(name="nomNature", type="string")
      */
-    private $nomType;
+    private $nomNature;
 
 
     /**
@@ -40,28 +40,25 @@ class TypeProduit
     }
 
     /**
-     * Set nomType
+     * Set nomNature
      *
-     * @param string $nomType
-     * @return TypeProduit
+     * @param string $nomNature
+     * @return NatureProduit
      */
-    public function setNomType($nomType)
+    public function setNomNature($nomNature)
     {
-        $this->nomType = $nomType;
+        $this->nomNature = $nomNature;
     
         return $this;
     }
 
     /**
-     * Get nomType
+     * Get nomNature
      *
      * @return string 
      */
-    public function getNomType()
+    public function getNomNature()
     {
-        return $this->nomType;
-    }
-    public function __toString(){
-    	return $this->getNomType();
+        return $this->nomNature;
     }
 }

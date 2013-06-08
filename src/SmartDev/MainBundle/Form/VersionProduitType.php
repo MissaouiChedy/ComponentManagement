@@ -11,8 +11,8 @@ class VersionProduitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomVersionProduit','text',array('label'=>'Nom de la version','required' => true))
-            ->add('dateVersionProduit','datetime',array('label'=>'Date de la Version','required' => true))
+            ->add('nomVersion')
+            ->add('dateVersion')
         ;
     }
 

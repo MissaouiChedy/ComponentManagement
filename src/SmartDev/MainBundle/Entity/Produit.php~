@@ -6,60 +6,74 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Produit
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="SmartDev\MainBundle\Entity\ProduitRepository")
  */
 class Produit
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="titre", type="string")
      */
-    private $titreProduit;
+    private $titre;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="description", type="string")
      */
-    private $descriptionProduit;
+    private $description;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="visibilite", type="boolean")
      */
-    private $visibiliteProduit;
-
+    private $visibilite;
     /**
-     * @var integer
+     * @ORM\OneToOne(targetEntity="Etat")
      */
-    private $idVersionProduit;
-
+    private $etat;
     /**
-     * @var integer
+     *@ORM\OneToOne(targetEntity="Licence")
      */
-    private $idTypeProduit;
-
+    private $licence;
     /**
-     * @var integer
+     *
+     * @ORM\OneToOne(targetEntity="TypeProduit")
      */
-    private $idNatureProduit;
-
+    private $typeProduit;
     /**
-     * @var integer
+     *
+     * @ORM\OneToOne(targetEntity="NatureProduit")
      */
-    private $idLicenceProduit;
-
+    private $natureProduit;
     /**
-     * @var integer
+     *
+     * @ORM\OneToMany(targetEntity="VersionProduit", mappedBy="Produit")
      */
-    private $idProgrammeProduit;
+    private $versionProduit;
 
+    
     /**
-     * @var integer
+     * Constructor
      */
-    private $idEtatProduit;
-
-
+    public function __construct()
+    {
+        $this->versionProduit = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
     /**
      * Get id
      *
@@ -71,209 +85,196 @@ class Produit
     }
 
     /**
-     * Set titreProduit
+     * Set titre
      *
-     * @param string $titreProduit
+     * @param string $titre
      * @return Produit
      */
-    public function setTitreProduit($titreProduit)
+    public function setTitre($titre)
     {
-        $this->titreProduit = $titreProduit;
+        $this->titre = $titre;
     
         return $this;
     }
 
     /**
-     * Get titreProduit
+     * Get titre
      *
      * @return string 
      */
-    public function getTitreProduit()
+    public function getTitre()
     {
-        return $this->titreProduit;
+        return $this->titre;
     }
 
     /**
-     * Set descriptionProduit
+     * Set description
      *
-     * @param string $descriptionProduit
+     * @param string $description
      * @return Produit
      */
-    public function setDescriptionProduit($descriptionProduit)
+    public function setDescription($description)
     {
-        $this->descriptionProduit = $descriptionProduit;
+        $this->description = $description;
     
         return $this;
     }
 
     /**
-     * Get descriptionProduit
+     * Get description
      *
      * @return string 
      */
-    public function getDescriptionProduit()
+    public function getDescription()
     {
-        return $this->descriptionProduit;
+        return $this->description;
     }
 
     /**
-     * Set visibiliteProduit
+     * Set visibilite
      *
-     * @param boolean $visibiliteProduit
+     * @param boolean $visibilite
      * @return Produit
      */
-    public function setVisibiliteProduit($visibiliteProduit)
+    public function setVisibilite($visibilite)
     {
-        $this->visibiliteProduit = $visibiliteProduit;
+        $this->visibilite = $visibilite;
     
         return $this;
     }
 
     /**
-     * Get visibiliteProduit
+     * Get visibilite
      *
      * @return boolean 
      */
-    public function getVisibiliteProduit()
+    public function getVisibilite()
     {
-        return $this->visibiliteProduit;
+        return $this->visibilite;
     }
 
     /**
-     * Set idVersionProduit
+     * Set etat
      *
-     * @param integer $idVersionProduit
+     * @param \SmartDev\MainBundle\Entity\Etat $etat
      * @return Produit
      */
-    public function setIdVersionProduit($idVersionProduit)
+    public function setEtat(\SmartDev\MainBundle\Entity\Etat $etat = null)
     {
-        $this->idVersionProduit = $idVersionProduit;
+        $this->etat = $etat;
     
         return $this;
     }
 
     /**
-     * Get idVersionProduit
+     * Get etat
      *
-     * @return integer 
+     * @return \SmartDev\MainBundle\Entity\Etat 
      */
-    public function getIdVersionProduit()
+    public function getEtat()
     {
-        return $this->idVersionProduit;
+        return $this->etat;
     }
 
     /**
-     * Set idTypeProduit
+     * Set licence
      *
-     * @param integer $idTypeProduit
+     * @param \SmartDev\MainBundle\Entity\Licence $licence
      * @return Produit
      */
-    public function setIdTypeProduit($idTypeProduit)
+    public function setLicence(\SmartDev\MainBundle\Entity\Licence $licence = null)
     {
-        $this->idTypeProduit = $idTypeProduit;
+        $this->licence = $licence;
     
         return $this;
     }
 
     /**
-     * Get idTypeProduit
+     * Get licence
      *
-     * @return integer 
+     * @return \SmartDev\MainBundle\Entity\Licence 
      */
-    public function getIdTypeProduit()
+    public function getLicence()
     {
-        return $this->idTypeProduit;
+        return $this->licence;
     }
 
     /**
-     * Set idNatureProduit
+     * Set typeProduit
      *
-     * @param integer $idNatureProduit
+     * @param \SmartDev\MainBundle\Entity\TypeProduit $typeProduit
      * @return Produit
      */
-    public function setIdNatureProduit($idNatureProduit)
+    public function setTypeProduit(\SmartDev\MainBundle\Entity\TypeProduit $typeProduit = null)
     {
-        $this->idNatureProduit = $idNatureProduit;
+        $this->typeProduit = $typeProduit;
     
         return $this;
     }
 
     /**
-     * Get idNatureProduit
+     * Get typeProduit
      *
-     * @return integer 
+     * @return \SmartDev\MainBundle\Entity\TypeProduit 
      */
-    public function getIdNatureProduit()
+    public function getTypeProduit()
     {
-        return $this->idNatureProduit;
+        return $this->typeProduit;
     }
 
     /**
-     * Set idLicenceProduit
+     * Set natureProduit
      *
-     * @param integer $idLicenceProduit
+     * @param \SmartDev\MainBundle\Entity\NatureProduit $natureProduit
      * @return Produit
      */
-    public function setIdLicenceProduit($idLicenceProduit)
+    public function setNatureProduit(\SmartDev\MainBundle\Entity\NatureProduit $natureProduit = null)
     {
-        $this->idLicenceProduit = $idLicenceProduit;
+        $this->natureProduit = $natureProduit;
     
         return $this;
     }
 
     /**
-     * Get idLicenceProduit
+     * Get natureProduit
      *
-     * @return integer 
+     * @return \SmartDev\MainBundle\Entity\NatureProduit 
      */
-    public function getIdLicenceProduit()
+    public function getNatureProduit()
     {
-        return $this->idLicenceProduit;
+        return $this->natureProduit;
     }
 
     /**
-     * Set idProgrammeProduit
+     * Add versionProduit
      *
-     * @param integer $idProgrammeProduit
+     * @param \SmartDev\MainBundle\Entity\VersionProduit $versionProduit
      * @return Produit
      */
-    public function setIdProgrammeProduit($idProgrammeProduit)
+    public function addVersionProduit(\SmartDev\MainBundle\Entity\VersionProduit $versionProduit)
     {
-        $this->idProgrammeProduit = $idProgrammeProduit;
+        $this->versionProduit[] = $versionProduit;
     
         return $this;
     }
 
     /**
-     * Get idProgrammeProduit
+     * Remove versionProduit
      *
-     * @return integer 
+     * @param \SmartDev\MainBundle\Entity\VersionProduit $versionProduit
      */
-    public function getIdProgrammeProduit()
+    public function removeVersionProduit(\SmartDev\MainBundle\Entity\VersionProduit $versionProduit)
     {
-        return $this->idProgrammeProduit;
+        $this->versionProduit->removeElement($versionProduit);
     }
 
     /**
-     * Set idEtatProduit
+     * Get versionProduit
      *
-     * @param integer $idEtatProduit
-     * @return Produit
+     * @return \Doctrine\Common\Collections\Collection 
      */
-    public function setIdEtatProduit($idEtatProduit)
+    public function getVersionProduit()
     {
-        $this->idEtatProduit = $idEtatProduit;
-    
-        return $this;
-    }
-
-    /**
-     * Get idEtatProduit
-     *
-     * @return integer 
-     */
-    public function getIdEtatProduit()
-    {
-        return $this->idEtatProduit;
+        return $this->versionProduit;
     }
 }

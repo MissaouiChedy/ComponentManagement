@@ -11,7 +11,7 @@ class ProgrammeProduitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomProgrammeProduit','text',array('label'=>'Nom du Programme','required' => true))
+            ->add('nomProgramme')
         ;
     }
 

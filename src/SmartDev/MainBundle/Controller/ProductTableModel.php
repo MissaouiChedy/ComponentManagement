@@ -5,9 +5,8 @@ class ProductTableModel {
 	private $headers;
 	public function __construct($products){
     	$this->allProducts = $products;
-    	$this->headers = array("Titre", "Date de creation",
-     			"Description", "Nature", "Type", "Licence", "Etat",
-     			"Technologie");
+    	$this->headers = array("Titre",
+     			"Description", "Nature", "Type", "Licence", "Etat");
     }
     public function getHeaders(){
     	return $this->headers;
@@ -18,13 +17,11 @@ class ProductTableModel {
     		if ($product->isVisible()){
     			$rows[] = array(
     					$product->getTitle(), 
-    					$product->getCreationDate(),
     					$product->getDescription(),
     					$product->getLicence(),
     					$product->getNature(),
     					$product->getType(),
-    					$product->getState(),
-    					$product->getMadeOfTechnology()
+    					$product->getState()
     					);
     		}
     	}

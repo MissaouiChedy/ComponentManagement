@@ -11,7 +11,7 @@ class TypeProduitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomTypeProduit','text',array('label'=>'Nom de type','required' => true))
+            ->add('nomType')
         ;
     }
 

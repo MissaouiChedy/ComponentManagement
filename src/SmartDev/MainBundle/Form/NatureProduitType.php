@@ -6,26 +6,24 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class VersionCmposantType extends AbstractType
+class NatureProduitType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        
         $builder
-            ->add('nomVersion','text',array('label'=>'Nom de la version','required' => true))
-            ->add('dateVersion','datetime',array('label'=>'Date de la Version','required' => true))
+            ->add('nomNature')
         ;
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'SmartDev\MainBundle\Entity\VersionCmposant'
+            'data_class' => 'SmartDev\MainBundle\Entity\NatureProduit'
         ));
     }
 
     public function getName()
     {
-        return 'smartdev_mainbundle_versioncmposanttype';
+        return 'smartdev_mainbundle_natureproduittype';
     }
 }

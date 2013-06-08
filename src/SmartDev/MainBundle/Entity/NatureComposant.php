@@ -6,18 +6,27 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * NatureComposant
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="SmartDev\MainBundle\Entity\NatureComposantRepository")
  */
 class NatureComposant
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nomNature", type="string")
      */
-    private $nomNaure;
+    private $nomNature;
 
 
     /**
@@ -31,25 +40,28 @@ class NatureComposant
     }
 
     /**
-     * Set nomNaure
+     * Set nomNature
      *
-     * @param string $nomNaure
+     * @param string $nomNature
      * @return NatureComposant
      */
-    public function setNomNaure($nomNaure)
+    public function setNomNature($nomNature)
     {
-        $this->nomNaure = $nomNaure;
+        $this->nomNature = $nomNature;
     
         return $this;
     }
 
     /**
-     * Get nomNaure
+     * Get nomNature
      *
      * @return string 
      */
-    public function getNomNaure()
+    public function getNomNature()
     {
-        return $this->nomNaure;
+        return $this->nomNature;
+    }
+    public function __toString(){
+    	return $this->getNomNature();
     }
 }

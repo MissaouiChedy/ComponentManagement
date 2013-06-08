@@ -6,18 +6,27 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * TypeComposant
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="SmartDev\MainBundle\Entity\TypeComposantRepository")
  */
 class TypeComposant
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nomType", type="string")
      */
-    private $nomTypeComposant;
+    private $nomType;
 
 
     /**
@@ -31,25 +40,28 @@ class TypeComposant
     }
 
     /**
-     * Set nomTypeComposant
+     * Set nomType
      *
-     * @param string $nomTypeComposant
+     * @param string $nomType
      * @return TypeComposant
      */
-    public function setNomTypeComposant($nomTypeComposant)
+    public function setNomType($nomType)
     {
-        $this->nomTypeComposant = $nomTypeComposant;
+        $this->nomType = $nomType;
     
         return $this;
     }
 
     /**
-     * Get nomTypeComposant
+     * Get nomType
      *
      * @return string 
      */
-    public function getNomTypeComposant()
+    public function getNomType()
     {
-        return $this->nomTypeComposant;
+        return $this->nomType;
+    }
+    public function __toString(){
+    	return $this->getNomType();
     }
 }
